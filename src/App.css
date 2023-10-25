@@ -1,0 +1,13 @@
+#root {
+
+  margin: 0 auto;
+  text-align: center;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  background-color: #333;
+  font-family:  'Roboto', sans-serif;
+}

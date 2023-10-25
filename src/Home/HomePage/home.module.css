@@ -1,0 +1,83 @@
+.contain-vitrine {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+.container-app {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  min-height: auto;
+  padding: 40px;
+  box-sizing: border-box;
+}
+
+a {
+text-decoration: none;
+border-radius: 25px;
+}
+
+.card {
+  display: flex;
+  width: 100%;
+  max-width: 400px;
+  flex-direction: column;
+  box-sizing: border-box;
+  margin: 10px;
+  border-radius: 10px;
+  background-color: #ffffff;
+  overflow: hidden;
+  padding: 10px;
+  border: solid 1px #000000a9;
+}
+
+  img {
+  width: 200px;
+  height: 150px;
+  background-color: transparent;
+}
+
+.description {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 1em;
+  box-sizing: border-box;
+  background-color: #fff;
+}
+
+.title-product {
+  color: #333;
+  font-weight: 100;
+  font-size: 12px;
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+
+.vitrine-price {
+  color: #333;
+}
+
+.categorie {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.categorie span {
+  margin: 10px;
+  color: #fff;
+}
+
+@media  (max-width: 1200px) {
+  .category {
+    font-size: 12px;
+
+  }
+}
