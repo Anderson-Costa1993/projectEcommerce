@@ -1,17 +1,15 @@
 import { createContext, useState, ReactNode } from "react";
-import { CartItem } from "../types";
+import { CartItemType } from "../types";
 
 type ContextType = {
-  cart: CartItem[];
-  setCart: React.Dispatch<React.SetStateAction<CartItem[]>>;
+  cart: CartItemType[];
+  setCart: React.Dispatch<React.SetStateAction<CartItemType[]>>;
 };
 
 export const ContextCart = createContext<ContextType | undefined>(undefined);
 
 const ContextProvider = ({ children }: { children: ReactNode }) => {
-
-
-  const [cart, setCart] = useState<CartItem[]>([]);
+  const [cart, setCart] = useState<CartItemType[]>([]);
 
   const contextValue: ContextType = {
     cart,
