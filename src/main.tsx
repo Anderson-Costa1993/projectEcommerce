@@ -24,7 +24,7 @@ const router = createBrowserRouter([
         element: <Home />,
       },
       {
-        path: "/product/:productId",
+        path: "/products/:productId",
         loader: (options) => {
           const params = options.params as any;
           const product = apiEcommerceService.getProductById(params.productId);

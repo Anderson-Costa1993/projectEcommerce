@@ -16,7 +16,7 @@ export function HomePage({ product }: Props) {
         <div className={style["container-app"]}>
           {product.map((produto: ProductsType) => (
             <div key={produto.id} className={style.card}>
-              <Link to={`/product/${produto.id}`}>
+              <Link to={`/products/${produto.id}`}>
                 <img src={produto.image} alt="imagem do produto" />
                 <div className={style.description}>
                   <span className={style["title-product"]}>
