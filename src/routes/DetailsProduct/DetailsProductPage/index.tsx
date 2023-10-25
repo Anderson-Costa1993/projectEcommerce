@@ -1,12 +1,35 @@
 import style from "./detailsProduct.module.css";
 import { ProductsType } from "../../../types";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
+import { ContextCart } from "../../../contextCart/ContextCart";
+import { useContext } from "react";
 
 type Props = {
   product: ProductsType;
 };
 
 export function DetailPage({ product }: Props) {
+  const context = useContext(ContextCart);
+
+  if (!context) {
+    throw new Error("O contexto não foi fornecido corretamente.");
+  }
+
+  const { cart, setCart } = context;
+
+  function addProduct() {
+    const updatedCart = [...cart];
+    const existingProductIndex = updatedCart.findIndex(
+      (item) => item.id === product.id
+    );
+    if (existingProductIndex !== -1) {
+      updatedCart[existingProductIndex].quantityCart += product.quantity || 1;
+    } else {
+      updatedCart.push({ ...product, quantityCart: product.quantity || 1 });
+    }
+    setCart(updatedCart);
+  }
+
   const navigate = useNavigate();
 
   return (
@@ -26,10 +49,12 @@ export function DetailPage({ product }: Props) {
         <h4 className={style.description}>{product?.description}</h4>
         <span style={{ color: "#ccc" }}>R$ {product?.price.toFixed(2)}</span>
         <div className={style["contain-btn"]}>
-          <button className={style.btn} onClick={() => navigate("/cart")}>
+        <Link to={`/cart`} onClick={() => addProduct()}>
+          <button className={style.btn}>
             Add to cart{" "}
             <i className="bi bi-cart-plus" style={{ fontSize: "18px" }}></i>
           </button>
+          </Link>
         </div>
       </section>
     </div>

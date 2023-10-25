@@ -30,5 +30,10 @@ export const apiEcommerceService = {
     return response.data
   },
 
+  addCartProductById: async () => {
+    const response = await http.get<ProductsType>("products");
+    return response.data
+  }
+
 
 }

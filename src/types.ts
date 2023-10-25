@@ -10,6 +10,7 @@ export type ProductsType = {
     count:  number,
   }
   title: string,
+  quantity: number
 };
 
 export type CartItemType  = {
