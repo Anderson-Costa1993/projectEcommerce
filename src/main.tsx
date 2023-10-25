@@ -4,6 +4,7 @@ import ContextProvider from "./contextCart/ContextCart.tsx";
 import { createBrowserRouter, RouterProvider, defer } from "react-router-dom";
 import { apiEcommerceService } from "./service/apiEcommerce.ts";
 import { Home } from "./routes/Home/index.tsx";
+import { Details } from "./routes/DetailsProduct/index.tsx";
 import { Category } from "./routes/Categories/index.tsx";
 
 const router = createBrowserRouter([
@@ -21,6 +22,17 @@ const router = createBrowserRouter([
         },
         element: <Home />,
       },
+      {
+        path: "/product/:productId",
+        loader: (options) => {
+          const params = options.params as any;
+          const product = apiEcommerceService.getProductById(params.productId);
+          return defer({
+            product,
+          });
+        },
+        element: <Details />,
+      },
 
       {
         path: "products/category/:category",
@@ -33,8 +45,6 @@ const router = createBrowserRouter([
         },
         element: <Category />,
       },
-
-
     ],
   },
 ]);

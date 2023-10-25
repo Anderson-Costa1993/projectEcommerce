@@ -11,8 +11,6 @@ export function UniqueCategory() {
     name: categoryName,
   }));
 
-  console.log(category);
-
   useEffect(() => {
     apiEcommerceService
       .getAllCategory()

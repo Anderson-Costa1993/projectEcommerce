@@ -13,6 +13,12 @@ export const apiEcommerceService = {
     return response.data;
   },
 
+  getProductById: async (id: number) => {
+    const response = await http.get<ProductsType>(`products/${id}`);
+    return response.data
+  },
+
+
   getAllCategory: async () => {
     const response = await http.get<CategoryType>("products/categories");
     return response.data
