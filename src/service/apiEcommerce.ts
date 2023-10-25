@@ -1,5 +1,5 @@
 import axios from "axios";
-import { ProductsType } from "../types";
+import { ProductsType, CategoryType } from "../types";
 
 const API_URL = "https://fakestoreapi.com/";
 
@@ -12,4 +12,17 @@ export const apiEcommerceService = {
     const response = await http.get<ProductsType>("products");
     return response.data;
   },
+
+  getAllCategory: async () => {
+    const response = await http.get<CategoryType>("products/categories");
+    return response.data
+  },
+
+
+  getCategoryById: async (category: string) => {
+    const response = await http.get<ProductsType>(`products/category/${category}`);
+    return response.data
+  },
+
+
 }

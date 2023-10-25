@@ -1,15 +1,17 @@
 import style from "./home.module.css";
 import { Link } from "react-router-dom";
-import { ProductsType } from "../../types";
-
+import { ProductsType } from "../../../types";
+import { UniqueCategory } from "../../UniqueCategory";
 
 type Props = {
   product: ProductsType[];
 };
 export function HomePage({ product }: Props) {
-  console.log(product)
+
+
   return (
     <>
+    <UniqueCategory />
       <div className={style["contain-vitrine"]}>
         <div className={style["container-app"]}>
           {product.map((produto: ProductsType) => (

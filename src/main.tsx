@@ -3,7 +3,8 @@ import App from "./App.tsx";
 import ContextProvider from "./contextCart/ContextCart.tsx";
 import { createBrowserRouter, RouterProvider, defer } from "react-router-dom";
 import { apiEcommerceService } from "./service/apiEcommerce.ts";
-import { Home } from "./Home/index.tsx";
+import { Home } from "./routes/Home/index.tsx";
+import { Category } from "./routes/Categories/index.tsx";
 
 const router = createBrowserRouter([
   {
@@ -20,6 +21,20 @@ const router = createBrowserRouter([
         },
         element: <Home />,
       },
+
+      {
+        path: "products/category/:category",
+        loader: (options) => {
+          const params = options.params as any;
+          const product = apiEcommerceService.getCategoryById(params.category);
+          return defer({
+            product,
+          });
+        },
+        element: <Category />,
+      },
+
+
     ],
   },
 ]);

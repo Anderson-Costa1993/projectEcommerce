@@ -1,0 +1,22 @@
+
+.contain-category {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2em;
+}
+.contain-category span {
+  margin: 10px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.allCategory {
+  font-size: 22px;
+}
+@media  (max-width: 1200px) {
+  .category {
+    font-size: 12px;
+
+  }
+}
