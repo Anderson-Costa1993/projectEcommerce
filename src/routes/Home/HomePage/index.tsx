@@ -8,7 +8,6 @@ type Props = {
 };
 export function HomePage({ product }: Props) {
 
-
   return (
     <>
     <UniqueCategory />

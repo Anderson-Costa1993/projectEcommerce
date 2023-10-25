@@ -10,12 +10,7 @@ type ProductDataLoader = {
 
 export function Details() {
   const { product } = useLoaderData() as ProductDataLoader;
-
-
-  try {
-    if (!product) {
-      return <p>Carregando...</p>; // Mostrar uma mensagem de carregamento enquanto os dados estão sendo buscados.
-    }
+  
 
   return (
     <div>
@@ -28,8 +23,4 @@ export function Details() {
       </Suspense>
     </div>
   );
-} catch (error) {
-  console.error("Erro na chamada à API:", error);
-  return <p>Ocorreu um erro ao carregar os dados do produto.</p>;
-}
 }
