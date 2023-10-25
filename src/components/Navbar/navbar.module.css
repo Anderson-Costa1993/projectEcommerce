@@ -1,0 +1,13 @@
+.caontainer-navBar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  background-color: #fff;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+.caontainer-navBar i {
+  font-size: 28px;
+  cursor: pointer;
+}
+

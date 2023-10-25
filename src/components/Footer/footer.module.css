@@ -1,0 +1,51 @@
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin: 0 auto;
+  background-color: #fff;;
+}
+
+.footer i {
+  font-size: 22px;
+}
+
+.contain-info {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  align-items: center;
+  margin: 2em 0 0.5em 0;
+  border-bottom: solid 1px #cdcdcd;
+}
+
+.linkHome {
+  text-decoration: none;
+  color: rgb(88, 83, 83);
+  font-size: 24px;
+  margin-left: 2px;
+}
+
+.Ulist {
+  list-style-type: none;
+  display: flex;
+}
+
+.list {
+  color: #000000;
+  margin: 0 10px;
+  font-size: 12px;
+}
+
+.contain-rights {
+  display: flex;
+  width: 80%;
+}
+
+.rights {
+  padding-bottom: 1em;
+  text-align: start;
+  color: #000000;
+  font-size: 14px;
+}
