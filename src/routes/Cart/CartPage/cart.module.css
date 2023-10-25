@@ -1,4 +1,4 @@
-.contain-cart {
+.container-cart {
   min-height: 100vh;
   background-color: #fff;
   display: flex;
@@ -132,7 +132,7 @@
 
 @media  (max-width: 1200px) {
 
-  .contin-cart {
+  .container-cart {
     flex-direction: column;
     display: flex;
     box-sizing: border-box;

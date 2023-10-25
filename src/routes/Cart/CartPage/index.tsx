@@ -51,7 +51,7 @@ export function CartPage({product}: Props) {
 
   return (
     <div>
-      <div className={style["contain-cart"]}>
+      <div className={style["container-cart"]}>
         {cart.length === 0 ? (
           <div className={style.EmptyCart}>
             <div>
